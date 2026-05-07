@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabbavarapu Tirumala Sri | Creative Portfolio</title>
+    <!-- Fonts for the Scrapbook / Creative vibe -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;600&family=Gaegu:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #fdfaf5;
+            --mint: #c1e1c5;
+            --lavender: #dcd3ff;
+            --peach: #ffd8cc;
+            --sky: #cce7ff;
+            --dark: #3a3d5e;
+            --border-width: 3px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--dark);
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            /* Dotted Grid Paper Background */
+            background-image: radial-gradient(#cfcfcf 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+
+        /* --- Magical Floating Elements --- */
+        .magic-container {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .leaf {
+            position: absolute;
+            background: var(--mint);
+            width: 15px;
+            height: 25px;
+            border-radius: 0 100%;
+            opacity: 0.6;
+            animation: fall 8s infinite linear;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-50px) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* --- Anime Mascot (Retro Aesthetic) --- */
+        .mascot-hero {
+            width: 180px;
+            height: 180px;
+            position: relative;
+            margin-bottom: 20px;
+            animation: floatMascot 4s infinite ease-in-out;
+        }
+
+        @keyframes floatMascot {
+            0%, 100% { transform: translateY(0) rotate(-2deg); }
+            50% { transform: translateY(-15px) rotate(2deg); }
+        }
+
+        /* --- Navigation Bar --- */
+        nav {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            border: var(--border-width) solid var(--dark);
+            border-radius: 50px;
+            padding: 10px 30px;
+            display: flex;
+            gap: 25px;
+            z-index: 1000;
+            box-shadow: 6px 6px 0 var(--dark);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: 0.2s;
+        }
+
+        nav a:hover { color: #ff758c; transform: scale(1.1); }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Gaegu', cursive;
+            font-size: clamp(3.5rem, 8vw, 6.5rem);
+            line-height: 0.9;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .hero h1 span {
+            display: block;
+            color: transparent;
+            -webkit-text-stroke: 2px var(--dark);
+        }
+
+        .hero .highlight {
+            background: var(--lavender);
+            padding: 0 15px;
+            border: var(--border-width) solid var(--dark);
+            display: inline-block;
+            transform: rotate(-2deg);
+        }
+
+        /* --- Sections --- */
+        section {
+            padding: 100px 10%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Gaegu', cursive;
+            font-size: 3.5rem;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        /* --- Grid & Cards (Behance Style) --- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            border: var(--border-width) solid var(--dark);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 8px 8px 0 var(--dark);
+            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translate(-5px, -5px);
+            box-shadow: 13px 13px 0 var(--sky);
+        }
+
+        .card h3 {
+            font-family: 'Fredoka', sans-serif;
+            margin-bottom: 15px;
+            color: #ff6b6b;
+        }
+
+        .sticker-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            background: var(--mint);
+            border: 2px solid var(--dark);
+            border-radius: 10px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        /* --- Special Writing Section --- */
+        .instagram-box {
+            grid-column: 1 / -1;
+            background: var(--peach);
+            text-align: center;
+            border: var(--border-width) solid var(--dark);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 10px 10px 0 var(--dark);
+        }
+
+        .insta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: white;
+            padding: 12px 25px;
+            border: var(--border-width) solid var(--dark);
+            border-radius: 50px;
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: bold;
+            margin-top: 20px;
+            transition: 0.2s;
+        }
+
+        .insta-btn:hover {
+            transform: scale(1.05);
+            background: #fff0f0;
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 60px;
+            font-family: 'Gaegu';
+            font-size: 1.4rem;
+        }
+
+        /* --- Animations --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: 1s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="magic-container" id="magic">
+        <!-- Leaves will be generated here -->
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#education">Info</a>
+        <a href="#projects">Work</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <header class="hero" id="home">
+        <!-- SVG Anime Mascot -->
+        <div class="mascot-hero">
+            <svg viewBox="0 0 100 100">
+                <!-- Cute Spirit / Character -->
+                <path d="M20 80 Q50 10 80 80" fill="white" stroke="var(--dark)" stroke-width="3"/>
+                <circle cx="40" cy="50" r="4" fill="var(--dark)"/>
+                <circle cx="60" cy="50" r="4" fill="var(--dark)"/>
+                <path d="M45 65 Q50 70 55 65" stroke="var(--dark)" fill="none" stroke-width="2"/>
+                <!-- Magical Leaf on head -->
+                <path d="M50 20 Q60 5 70 20 T50 35" fill="var(--mint)" stroke="var(--dark)" stroke-width="1"/>
+            </svg>
+        </div>
+        <h1>
+            <span>Sabbavarapu</span>
+            <div class="highlight">Tirumala Sri</div>
+        </h1>
+        <p style="font-size: 1.2rem; font-weight: 300; letter-spacing: 2px;">COMPUTER SCIENCE • CREATIVE WRITER • DREAMER</p>
+    </header>
+
+    <section id="education">
+        <h2 class="section-title">Academic Story</h2>
+        <div class="grid">
+            <div class="card reveal">
+                <div class="sticker-tag">CURRENT</div>
+                <h3>B.Tech CSE</h3>
+                <p>NSRIT Andhra Pradesh</p>
+                <p>GPA: 7.87/10</p>
+            </div>
+            <div class="card reveal" style="background: var(--sky);">
+                <div class="sticker-tag">2023</div>
+                <h3>Intermediate</h3>
+                <p>Sri Chaitanya Junior College</p>
+                <p>Science & Maths | 78%</p>
+            </div>
+            <div class="card reveal">
+                <div class="sticker-tag">GRADUATED</div>
+                <h3>Secondary School</h3>
+                <p>Sri Chaitanya Techno School</p>
+                <p>Percentage: 84%</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title">Digital Experiments</h2>
+        <div class="grid">
+            <div class="card reveal">
+                <div class="sticker-tag">PYTHON / AI</div>
+                <h3>LEARNOVA</h3>
+                <p>SIH Hackathon Project. Extracting summaries and quizzes from video/PDF links for smart learning.</p>
+            </div>
+            <div class="card reveal">
+                <div class="sticker-tag">UI / HTML / CSS</div>
+                <h3>SoulSync</h3>
+                <p>A conversational emotional support platform using an AI chatbot for empathetic dialogue.</p>
+            </div>
+            <div class="card reveal">
+                <div class="sticker-tag">WEB APP</div>
+                <h3>SkillSwap</h3>
+                <p>Campus platform for students to share skills and access university opportunities.</p>
+            </div>
+            <div class="card reveal">
+                <div class="sticker-tag">BACKEND</div>
+                <h3>AI Search Bot</h3>
+                <p>Logic for fetching research papers and improving retrieval accuracy with Python.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2 class="section-title">My Toolbox</h2>
+        <div class="grid">
+            <div class="card reveal">
+                <h3>Technical</h3>
+                <p>C, Java, Python, SQL, HTML, CSS</p>
+                <p>GitHub, VS Code</p>
+            </div>
+            <div class="card reveal" style="background: var(--lavender);">
+                <h3>Soft Skills & Arts</h3>
+                <p>Photography 📸</p>
+                <p>Decision Making</p>
+                <p>Creative Sketching</p>
+                <p>Event Organising</p>
+            </div>
+            
+            <div class="instagram-box reveal">
+                <h3 style="color: var(--dark);">Of Dust and Ink</h3>
+                <p>My creative writing sanctuary. Stories and poems written from the soul.</p>
+                <a href="https://www.instagram.com/of_dust_and_ink_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="insta-btn">
+                    Visit Instagram Writing Page ✍️
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="card reveal" style="text-align: center; padding: 60px; background: var(--sky);">
+            <h2 class="section-title" style="margin-bottom: 20px;">Say Hello!</h2>
+            <p>📍 Visakhapatnam, Andhra Pradesh</p>
+            <p>📞 9032619867</p>
+            <p>✉️ tirumalasrisabbavarapu15@gmail.com</p>
+            <br>
+            <a href="https://linkedin.com/in/timuralasri-sabbavarapu" target="_blank" class="insta-btn" style="background: var(--dark); color: white;">LinkedIn Profile</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>Hand-crafted with ✨ by Sabbavarapu Tirumala Sri</p>
+    </footer>
+
+    <script>
+        // Generate falling leaves
+        const magic = document.getElementById('magic');
+        for (let i = 0; i < 15; i++) {
+            const leaf = document.createElement('div');
+            leaf.className = 'leaf';
+            leaf.style.left = Math.random() * 100 + 'vw';
+            leaf.style.animationDelay = Math.random() * 8 + 's';
+            leaf.style.backgroundColor = ['#c1e1c5', '#ffd8cc', '#cce7ff'][Math.floor(Math.random() * 3)];
+            magic.appendChild(leaf);
+        }
+
+        // Scroll Reveal
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal(); // Initial check
+    </script>
+</body>
+</html>
