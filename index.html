@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sabbavarapu Tirumala Sri | Creative Portfolio</title>
-    <!-- Fonts for the Scrapbook / Creative vibe -->
+   
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;600&family=Gaegu:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -29,12 +29,12 @@
             color: var(--dark);
             font-family: 'Poppins', sans-serif;
             overflow-x: hidden;
-            /* Dotted Grid Paper Background */
+
             background-image: radial-gradient(#cfcfcf 1px, transparent 1px);
             background-size: 30px 30px;
         }
 
-        /* --- Magical Floating Elements --- */
+
         .magic-container {
             position: fixed;
             inset: 0;
@@ -59,7 +59,7 @@
             100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
         }
 
-        /* --- Anime Mascot (Retro Aesthetic) --- */
+      
         .mascot-hero {
             width: 180px;
             height: 180px;
@@ -73,7 +73,7 @@
             50% { transform: translateY(-15px) rotate(2deg); }
         }
 
-        /* --- Navigation Bar --- */
+
         nav {
             position: fixed;
             top: 20px;
@@ -100,7 +100,7 @@
 
         nav a:hover { color: #ff758c; transform: scale(1.1); }
 
-        /* --- Hero Section --- */
+
         .hero {
             height: 100vh;
             display: flex;
@@ -133,7 +133,7 @@
             transform: rotate(-2deg);
         }
 
-        /* --- Sections --- */
+
         section {
             padding: 100px 10%;
             max-width: 1200px;
@@ -147,7 +147,7 @@
             text-align: center;
         }
 
-        /* --- Grid & Cards (Behance Style) --- */
+        
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -186,7 +186,7 @@
             margin-bottom: 10px;
         }
 
-        /* --- Special Writing Section --- */
+
         .instagram-box {
             grid-column: 1 / -1;
             background: var(--peach);
@@ -217,7 +217,7 @@
             background: #fff0f0;
         }
 
-        /* --- Footer --- */
+
         footer {
             text-align: center;
             padding: 60px;
@@ -225,7 +225,7 @@
             font-size: 1.4rem;
         }
 
-        /* --- Animations --- */
+      
         .reveal {
             opacity: 0;
             transform: translateY(30px);
@@ -241,7 +241,7 @@
 <body>
 
     <div class="magic-container" id="magic">
-        <!-- Leaves will be generated here -->
+
     </div>
 
     <nav>
@@ -253,15 +253,15 @@
     </nav>
 
     <header class="hero" id="home">
-        <!-- SVG Anime Mascot -->
+
         <div class="mascot-hero">
             <svg viewBox="0 0 100 100">
-                <!-- Cute Spirit / Character -->
+           
                 <path d="M20 80 Q50 10 80 80" fill="white" stroke="var(--dark)" stroke-width="3"/>
                 <circle cx="40" cy="50" r="4" fill="var(--dark)"/>
                 <circle cx="60" cy="50" r="4" fill="var(--dark)"/>
                 <path d="M45 65 Q50 70 55 65" stroke="var(--dark)" fill="none" stroke-width="2"/>
-                <!-- Magical Leaf on head -->
+                
                 <path d="M50 20 Q60 5 70 20 T50 35" fill="var(--mint)" stroke="var(--dark)" stroke-width="1"/>
             </svg>
         </div>
@@ -364,7 +364,7 @@
     </footer>
 
     <script>
-        // Generate falling leaves
+
         const magic = document.getElementById('magic');
         for (let i = 0; i < 15; i++) {
             const leaf = document.createElement('div');
@@ -375,7 +375,7 @@
             magic.appendChild(leaf);
         }
 
-        // Scroll Reveal
+     
         function reveal() {
             var reveals = document.querySelectorAll(".reveal");
             for (var i = 0; i < reveals.length; i++) {
@@ -388,7 +388,7 @@
             }
         }
         window.addEventListener("scroll", reveal);
-        reveal(); // Initial check
+        reveal(); 
     </script>
 </body>
 </html>
